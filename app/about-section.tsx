@@ -82,7 +82,7 @@ export function AboutSection() {
               className="bg-slate-800/30 border-white/10 backdrop-blur-xl hover:scale-105 hover:bg-slate-800/40 hover:border-purple-400/30 transition-all duration-300"
             >
               <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-br from-purple-500/20 to-blue-500/20 mb-4">
                   <item.icon className="w-8 h-8 text-purple-400" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>

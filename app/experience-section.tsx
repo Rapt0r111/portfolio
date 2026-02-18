@@ -83,12 +83,12 @@ export function ExperienceSection() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-purple-500 hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500 via-blue-500 to-purple-500 hidden md:block" />
 
           <div className="space-y-8">
             {jobs.map((job, index) => (
               <div key={index} className="relative">
-                <div className="hidden md:block absolute left-6 top-8 w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 border-4 border-slate-950" />
+                <div className="hidden md:block absolute left-6 top-8 w-5 h-5 rounded-full bg-linear-to-br from-purple-500 to-blue-500 border-4 border-slate-950" />
 
                 <Card className="md:ml-20 bg-slate-800/30 border-white/10 backdrop-blur-xl hover:border-purple-500/50 hover:bg-slate-800/40 transition-all duration-300">
                   <CardHeader>
