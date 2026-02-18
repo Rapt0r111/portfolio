@@ -2,11 +2,12 @@
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Mail, Github } from 'lucide-react';
+import { MapPin } from 'lucide-react'; // Удаляем Github отсюда
+import { FaTelegramPlane, FaGithub } from 'react-icons/fa'; // Добавляем FaGithub
 
 export function HeroSection() {
   const handleContactClick = () => {
-    window.location.href = 'mailto:Rapt0r111@yandex.ru';
+    window.open('https://t.me/Rapt0r111', '_blank', 'noopener,noreferrer');
   };
 
   const handleGithubClick = () => {
@@ -14,8 +15,9 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-purple-950 to-slate-900 pt-24 md:pt-28">      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),rgba(0,0,0,0))] pointer-events-none" />
-
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-purple-950 to-slate-900 pt-24 md:pt-28">
+      {/* ... (остальной фоновый код без изменений) ... */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),rgba(0,0,0,0))] pointer-events-none" />
       <div className="absolute top-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
@@ -47,23 +49,25 @@ export function HeroSection() {
             <Button
               size="lg"
               onClick={handleContactClick}
-              className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg backdrop-blur-sm"
+              className="bg-linear-to-r rounded-3xl from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg backdrop-blur-sm"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Связаться
+              <FaTelegramPlane className="w-5 h-5 mr-2" />
+              Telegram
             </Button>
 
             <Button
               size="lg"
               variant="outline"
               onClick={handleGithubClick}
-              className="border-purple-500/50 text-purple-300 hover:bg-purple-500/10 px-8 py-6 text-lg backdrop-blur-sm"
+              className="border-purple-500/50 rounded-3xl text-purple-300 hover:bg-purple-500/10 px-8 py-6 text-lg backdrop-blur-sm"
             >
-              <Github className="w-5 h-5 mr-2" />
+              {/* Заменено с Github на FaGithub */}
+              <FaGithub className="w-5 h-5 mr-2" /> 
               GitHub
             </Button>
           </div>
-
+          
+          {/* ... (остальной код с анимацией скролла без изменений) ... */}
           <div className="pt-16 animate-bounce">
             <div className="w-6 h-10 border-2 border-purple-400/50 rounded-full mx-auto flex items-start justify-center p-2">
               <div className="w-1.5 h-3 bg-purple-400 rounded-full animate-scroll" />
@@ -75,33 +79,15 @@ export function HeroSection() {
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes fade-in-up {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
           }
-
-          .animate-fade-in-up {
-            animation: fade-in-up 0.8s ease-out forwards;
-            opacity: 0;
-          }
-
+          .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; opacity: 0; }
           @keyframes scroll {
-            0%, 100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(8px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
           }
-
-          .animate-scroll {
-            animation: scroll 1.5s ease-in-out infinite;
-          }
+          .animate-scroll { animation: scroll 1.5s ease-in-out infinite; }
         `
       }} />
     </section>
