@@ -79,18 +79,15 @@ export function SkillsSection() {
     const colors = {
       purple: {
         badge: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
-        progress: 'bg-purple-500',
-        card: 'border-purple-500/50',
+        progress: 'bg-gradient-to-r from-purple-500 to-fuchsia-500',
       },
       blue: {
         badge: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-        progress: 'bg-blue-500',
-        card: 'border-blue-500/50',
+        progress: 'bg-gradient-to-r from-blue-500 to-cyan-500',
       },
       green: {
         badge: 'bg-green-500/20 text-green-300 border-green-500/30',
-        progress: 'bg-green-500',
-        card: 'border-green-500/50',
+        progress: 'bg-gradient-to-r from-emerald-500 to-green-500',
       },
     };
     return colors[color as keyof typeof colors] || colors.purple;
@@ -114,7 +111,7 @@ export function SkillsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, categoryIndex) => {
             const colors = getColorClasses(category.color);
-            
+
             return (
               <Card
                 key={categoryIndex}
@@ -136,9 +133,12 @@ export function SkillsSection() {
                       </div>
                       <Progress
                         value={isVisible ? skill.level : 0}
-                        className="h-2 bg-slate-700"
-                        style={{
-                          transition: `all ${0.5 + skillIndex * 0.1}s ease-out`,
+                        className="h-2 bg-slate-700/80"
+                        indicatorClassName={colors.progress}
+                        indicatorStyle={{
+                          transitionDuration: `${700 + skillIndex * 120}ms`,
+                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                          transitionDelay: `${categoryIndex * 120 + skillIndex * 80}ms`,
                         }}
                       />
                     </div>
