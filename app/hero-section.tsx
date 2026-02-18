@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Github, Mail } from 'lucide-react';
+import { MapPin, Mail, Github } from 'lucide-react';
 
 export function HeroSection() {
   const handleContactClick = () => {
@@ -14,7 +14,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 pt-24 md:pt-28">      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(120,119,198,0.1),rgba(0,0,0,0))] pointer-events-none" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-purple-950 to-slate-900 pt-24 md:pt-28">      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),rgba(0,0,0,0))] pointer-events-none" />
 
       <div className="absolute top-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -24,12 +24,12 @@ export function HeroSection() {
           <div className="animate-fade-in-up">
             <Badge variant="secondary" className="mb-6 text-sm px-4 py-2 bg-purple-500/20 text-purple-200 border-purple-500/30 backdrop-blur-sm">
               <MapPin className="w-4 h-4 mr-2" />
-              Калининград · Готов к релокации / Удаленно после 12.2026
+              Санкт-Петербург
             </Badge>
           </div>
 
           <div className="space-y-4" style={{ animation: 'fade-in-up 0.8s ease-out 0.2s forwards', opacity: 0 }}>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 leading-tight">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-400 to-blue-400 leading-tight">
               DUDIN
             </h1>
 
@@ -47,7 +47,7 @@ export function HeroSection() {
             <Button
               size="lg"
               onClick={handleContactClick}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg backdrop-blur-sm"
+              className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg backdrop-blur-sm"
             >
               <Mail className="w-5 h-5 mr-2" />
               Связаться

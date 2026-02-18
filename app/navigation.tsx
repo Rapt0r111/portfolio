@@ -73,7 +73,7 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-300 hover:to-blue-300 transition-all focus:outline-none focus-visible:outline-none focus-visible:ring-0"            >
+              className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-blue-400 hover:from-purple-300 hover:to-blue-300 transition-all focus:outline-none focus-visible:outline-none focus-visible:ring-0"            >
               DUDIN
             </button>
 
@@ -83,7 +83,7 @@ export function Navigation() {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all relative focus:outline-none focus-visible:outline-none focus-visible:ring-0 ${activeSection === item.id
-                    ? 'text-white bg-gradient-to-r from-purple-500/20 to-blue-500/20'
+                    ? 'text-white bg-linear-to-r from-purple-500/20 to-blue-500/20'
                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                 >
@@ -123,7 +123,7 @@ export function Navigation() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`px-6 py-4 text-lg text-left rounded-lg transition-all ${activeSection === item.id
-                      ? 'text-white bg-gradient-to-r from-purple-500/20 to-blue-500/20'
+                      ? 'text-white bg-linear-to-r from-purple-500/20 to-blue-500/20'
                       : 'text-gray-300 hover:bg-white/5'
                       }`}
                   >
